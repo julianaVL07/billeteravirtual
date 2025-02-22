@@ -54,4 +54,8 @@ public class Billetera {
                 ", usuario=" + usuario.getNombre()+
                 '}';
     }
+
+    public void generarNumeroAleatorio (int i){
+
+    }
 }
