@@ -12,4 +12,46 @@ public class EntidadBancaria {
         this.billeteras= new ArrayList<>();
         this.transacciones= new ArrayList<>();
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(ArrayList<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public ArrayList<Billetera> getBilleteras() {
+        return billeteras;
+    }
+
+    public void setBilleteras(ArrayList<Billetera> billeteras) {
+        this.billeteras = billeteras;
+    }
+
+    public ArrayList<Transaccion> getTransacciones() {
+        return transacciones;
+    }
+
+    public void setTransacciones(ArrayList<Transaccion> transacciones) {
+        this.transacciones = transacciones;
+    }
+
+    @Override
+    public String toString() {
+        return "EntidadBancaria{" +
+                "nombre='" + nombre + '\'' +
+                ", usuarios=" + usuarios +
+                ", billeteras=" + billeteras +
+                ", transacciones=" + transacciones +
+                '}';
+    }
 }
