@@ -56,5 +56,5 @@ public class Billetera {
     }
 
     public void generarNumeroAleatorio (int i){
-        for(i=1 , 1==10, 1++) { int ab=5;}
+        for(i=1 , 1==10, 1++) { int ab=5; int c=4;}
 }
