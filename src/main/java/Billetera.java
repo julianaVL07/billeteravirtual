@@ -12,6 +12,28 @@ public class Billetera {
         this.transacciones =new ArrayList<>();
         this.usuario = usuario;
     }
+    public Billetera(Usuario usuario, Set<String> numerosExistentes) {
+        do {
+            this.num = UUID.randomUUID().toString().substring(0, 10);
+        } while (numerosExistentes.contains(this.num));
+        numerosExistentes.add(this.num);
+        this.saldo = 0;
+        this.transacciones = new ArrayList<>();
+        this.usuario = usuario;
+    }
+
+    public void recargar(float monto) {
+        if (monto <= 0) throw new IllegalArgumentException("El monto debe ser positivo");
+        saldo += monto;
+    }
+
+    public void realizarTransaccion(Billetera destino, float monto, Categoria categoria) {
+        if (monto + 200 > saldo) throw new IllegalArgumentException("Saldo insuficiente");
+        saldo -= (monto + 200);
+        destino.saldo += monto;
+        Transaccion t = new Transaccion(monto, LocalDateTime.now(), categoria, this, destino);
+        transacciones.add(t);
+        destino.transacciones.add(t);
 
     public String getNum() {
         return num;
